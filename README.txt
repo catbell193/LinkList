@@ -1,0 +1,1 @@
+Rolea and Krystal create methods for a link list.
