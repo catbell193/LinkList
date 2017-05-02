@@ -64,6 +64,17 @@ class LinkedList{
 		first.next = head;
 		head = first;
 	}
+	int length() {
+		Node after = head;
+		int count = 0;
+		while(after != null){
+			after = after.next;
+			count++;
+		}
+		return count;
+
+	}
+		
 
 }
 
@@ -94,6 +105,8 @@ class LinkListP{
 
 		krystal.pushFront(360);
 	 	krystal.print();
+
+	 	System.out.println(krystal.length());
 	}
 
 }
