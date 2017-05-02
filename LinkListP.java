@@ -48,6 +48,22 @@ class LinkedList{
 		return n;
 		 
 	}
+	int popBack(){
+		Node after = head;
+		while(after.next.next != null) {
+		 	after = after.next;
+		}
+		int number = after.next.data;
+		after.next = null;
+		
+		return number;
+		 
+	}
+	void pushFront(int val) {
+		Node first = new Node(val);
+		first.next = head;
+		head = first;
+	}
 
 }
 
@@ -68,6 +84,15 @@ class LinkListP{
 	 	krystal.print();
 
 	 	System.out.println(krystal.pop());
+	 	krystal.print();
+
+	 	System.out.println(krystal.popBack());
+	 	krystal.print();
+
+	 	krystal.pushFront(30);
+	 	krystal.print();
+
+		krystal.pushFront(360);
 	 	krystal.print();
 	}
 
