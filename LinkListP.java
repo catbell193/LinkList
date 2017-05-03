@@ -74,7 +74,31 @@ class LinkedList{
 		return count;
 
 	}
+	boolean find(int x) {
+		Node after = head;
+		boolean result;
+		int check= 0;
+		int deploy;
+		while(after.next != null){
+			after = after.next;
+			if(after.data == x ){
+			check++;
+			}
+			else {
+				deploy = check;
+			}
+		}
+			
+		if(check > 0 ){
+			result = true;
+		}
+			
+		else{
+		result = false;
 		
+		}
+		return result;
+	}
 
 }
 
@@ -106,7 +130,14 @@ class LinkListP{
 		krystal.pushFront(360);
 	 	krystal.print();
 
+	 	krystal.push(74);
+	 	krystal.print();
+
+	 	krystal.push(91);
+	 	krystal.print();
+
 	 	System.out.println(krystal.length());
+	 	System.out.println(krystal.find(91));
 	}
 
 }
