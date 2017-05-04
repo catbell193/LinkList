@@ -76,30 +76,44 @@ class LinkedList{
 	}
 	boolean find(int x) {
 		Node after = head;
-		boolean result;
-		int check= 0;
+		boolean result = false;
 		int deploy;
-		while(after.next != null){
+		while(after.next!= null){
 			after = after.next;
-			if(after.data == x ){
-			check++;
-			}
-			else {
-				deploy = check;
+			if(after.data == x) {
+				result = true;
+				return true;
 			}
 		}
-			
-		if(check > 0 ){
-			result = true;
-		}
-			
-		else{
-		result = false;
-		
-		}
-		return result;
+		return  result ;
 	}
 
+	boolean remove(int x) {
+		Node after = head;
+		boolean result = false;
+		while(after.next!= null) {
+			if(head.data == x){;
+				head = after.next; 
+				result = true;
+			}
+			if(after.data == x) {
+				head.next = after.next.next;
+				result = true;
+				
+		  	}
+			if(after.next.data == x){
+				after.next = after.next.next;
+				if(head.next == null && head.data == x){
+					head = null;
+				}
+			}
+			else{ 
+				after = after.next;
+			}
+		  	
+		}	
+		return result;
+	}
 }
 
 class LinkListP{
@@ -108,37 +122,48 @@ class LinkListP{
 		LinkedList krystal = new LinkedList();
 
 
-	 	krystal.push(90);
+	 	krystal.push(4);
 	 	krystal.print();
 
 	 	
-	 	krystal.push(50);
+	 	krystal.push(2);
 	 	krystal.print();
 
-	 	krystal.push(40);
+	 	krystal.push(3);
 	 	krystal.print();
 
 	 	System.out.println(krystal.pop());
 	 	krystal.print();
 
 	 	System.out.println(krystal.popBack());
+	 	 krystal.print();
+
+	 	krystal.pushFront(4);
 	 	krystal.print();
 
-	 	krystal.pushFront(30);
+		krystal.pushFront(4);
 	 	krystal.print();
 
-		krystal.pushFront(360);
+	 	krystal.push(6);
 	 	krystal.print();
 
-	 	krystal.push(74);
-	 	krystal.print();
-
-	 	krystal.push(91);
+	 	krystal.push(4);
 	 	krystal.print();
 
 	 	System.out.println(krystal.length());
-	 	System.out.println(krystal.find(91));
+	 	System.out.println(krystal.find(2));
+	 	System.out.println(krystal.find(90));
+	 	System.out.println(krystal.remove(4));
+	 	krystal.print();
 	}
 
 }
+// else {
+// 				if(after.next.next.data == x){
+// 		  			after = after.next;
+// 		  			result = true;
+// 		  		if(after.next.data == x){
+// 		  			after = after.next;
+// 		  			}
+// 		  		}	
 
